@@ -20,3 +20,10 @@ union
 select p.id,r.cityName,p.cityName,null
 from s_provinces s,s_provinces p,s_provinces r 
 where p.parentId = r.id and r.cityName = '广东省'；
+
+
+union 和 union all 的区别
+union 会对要连接的2个表进行2个查询的结果进行对比,然后最后的结果不会出现重复的结果
+union all 不会把重复的数据清理掉
+
+如果确保2个需要连接的表没有重复的数据 使用 union all 连接比 union 要好，效率高
